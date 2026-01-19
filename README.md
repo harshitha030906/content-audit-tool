@@ -42,17 +42,17 @@ A full‑stack web application that audits text content and any website url usin
 
 ## 📥 Installation
 
-# 1. Clone the repository:
+### 1. Clone the repository:
 git clone https://github.com/harshitha030906/content-audit-tool.git
 
 cd content-audit-tool
 
-# 2.Install dependencies:
+### 2.Install dependencies:
 npm install
 or
 yarn install
 
-# 3. Create a .env file in the root folder:
+### 3. Create a .env file in the root folder:
 GEMINI_API_KEY=your_gemini_api_key_here
 
 #Firecrawl API key for SERP and keyword analysis
