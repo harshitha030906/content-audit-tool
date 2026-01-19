@@ -1,0 +1,204 @@
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --accent:#2563eb;      
+  --accent-hover: #1d4ed8; 
+  --success: #10b981;     
+  --text-dark: #111827;
+  --text-medium: #374151;
+  --text-light: #6b7280;
+  --border-color: #e6e9ee;
+  --shadow-md: 0 6px 18px rgba(15,23,42,0.06);
+  --shadow-lg: 0 10px 20px rgba(15,23,42,0.1);
+  --radius: 12px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+h2 { font-size: 1.65rem; margin-top: 0.5rem; margin-bottom: 1rem; }
+h3 { font-size: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.75rem; color: var(--text-medium); }
+
+a { 
+  color:var(--accent); 
+  text-decoration:none; 
+  transition: color 0.15s ease-in-out;
+}
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.container {
+  max-width:900px;
+  margin:36px auto;
+  padding:18px;
+}
+
+.small { 
+  font-size:0.92rem; 
+  color:var(--text-light); 
+}
+
+.grid-2 { 
+  display:grid; 
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); 
+  gap:16px; 
+}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow-md);
+  border: 1px solid rgba(0,0,0,0.05); 
+}
+
+/* Cards */
+.card[style*="cursor:pointer"]:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/*btns*/
+.btn {
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:8px;
+  background:var(--accent);
+  color:white;
+  border:none;
+  cursor:pointer;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+.btn:hover:not(:disabled) {
+  background:var(--accent-hover);
+}
+.btn:disabled {
+  background: #9ca3af; 
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+input:not([type="file"]):not(.url-input) {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color .12s ease;
+}
+input:focus {
+  border-color: var(--accent);
+}
+
+.url-input-container {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px dashed rgba(15,23,42,0.06);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.url-input-container .url-label {
+  color: var(--text-medium);
+  font-weight: 600;
+}
+.url-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e6e9ee;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color .12s ease, box-shadow .12s ease;
+}
+.url-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* loader */
+.loader{
+  border:4px solid #e6e6e6;
+  border-top:4px solid var(--accent);
+  border-radius:50%;
+  width:36px;
+  height:36px;
+  animation:spin 1s linear infinite;
+  margin:18px auto;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* -result page */
+
+.score-card {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.score-title {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  font-weight: 500;
+  white-space: nowrap; 
+}
+
+.score-value {
+  margin: 5px 0 0 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--success); 
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list li {
+  background: var(--bg);
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border-left: 4px solid var(--success); 
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text-medium);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+/* header */
+.header-bar {
+  padding:16px; 
+  background:var(--card); 
+  box-shadow:0 1px 4px rgba(0,0,0,0.08);
+}
+.header-inner {
+  max-width:900px; 
+  margin:"0 auto";
+}
+.header-bar h1 {
+  margin:0; 
+  font-size: 1.5rem; 
+  color: var(--accent);
+}
